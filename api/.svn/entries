@@ -11,8 +11,8 @@ http://svn.openmrs.org
 25301
 raff
 has-props
-
-
+has-prop-mods
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -25,9 +25,6 @@ has-props
 
 
 5bac5841-c719-aa4e-b3fe-cce5062f897a
-
-src
-dir
 
 pom.xml
 file
@@ -62,4 +59,7 @@ raff
 
 
 1710
+
+src
+dir
 

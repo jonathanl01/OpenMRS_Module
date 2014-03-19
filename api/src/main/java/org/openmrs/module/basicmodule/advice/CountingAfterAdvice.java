@@ -7,6 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.Patient;
 import org.openmrs.Encounter;
+import org.openmrs.Person;
 import org.springframework.aop.AfterReturningAdvice;
 
 
@@ -34,6 +35,10 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
             if (returnValue.getClass() == Encounter.class) {
                 Encounter enc = (Encounter)returnValue;
                 Patient p = enc.getPatient();
+                System.out.println(" Patient: " + p.getFamilyName());
+            }
+            if (method.getName().equals("createPerson")) {
+                Person p = (Person)returnValue;
                 System.out.println(" Patient: " + p.getFamilyName());
             }
             }
