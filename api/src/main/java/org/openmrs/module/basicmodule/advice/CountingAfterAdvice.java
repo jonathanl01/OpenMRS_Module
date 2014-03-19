@@ -39,7 +39,7 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
             }
             if (method.getName().equals("createPerson")) {
                 Person p = (Person)returnValue;
-                System.out.println(" Patient: " + p.getFamilyName());
+                System.out.println(" Person: " + p.getFamilyName() + " created");
             }
             }
 

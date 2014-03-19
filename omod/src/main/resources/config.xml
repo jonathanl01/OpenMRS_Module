@@ -44,7 +44,13 @@
     <advice>
         <point>org.openmrs.api.PersonService</point>
         <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>       
+    </advice>    
+    
+   <advice>
+        <point>org.openmrs.api.OrderService</point>
+        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
+    </advice>    
+    
     <globalProperty>
         <property>basicmodule.testproperty</property>
         <defaultValue>6</defaultValue>
