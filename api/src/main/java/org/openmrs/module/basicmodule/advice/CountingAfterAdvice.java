@@ -1,0 +1,50 @@
+package org.openmrs.module.basicmodule.advice;
+
+import java.lang.reflect.Method;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.openmrs.api.context.Context;
+import org.openmrs.Patient;
+import org.openmrs.Encounter;
+import org.springframework.aop.AfterReturningAdvice;
+
+
+/*
+Refer to https://wiki.openmrs.org/display/docs/OpenMRS+AOP
+*/
+public class CountingAfterAdvice implements AfterReturningAdvice {
+
+    private Log log = LogFactory.getLog(this.getClass());
+
+    private int count = 0;
+
+    public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
+        log.debug("Method: " + method.getName() + ". After advice called " + (++count) + " time(s) now.");
+        String userName = Context.getUserContext().getAuthenticatedUser().getFamilyName();
+        System.out.println("AOP - by: " + userName + "  Method: " + method.getName() + ". After advice called " + (++count) + " time(s) now.");
+        if (returnValue != null) {
+            if (returnValue.getClass() == Patient.class) {
+                Patient p = (Patient) returnValue;
+                System.out.println("Patient: " + p.getFamilyName());
+                System.out.println("-------Modified------");
+                System.out.println("Patient Gender: " + p.getGender());
+                System.out.println("Patient UuID: "+ Context.getUserContext().getAuthenticatedUser().getUuid());
+            }
+            if (returnValue.getClass() == Encounter.class) {
+                Encounter enc = (Encounter)returnValue;
+                Patient p = enc.getPatient();
+                System.out.println(" Patient: " + p.getFamilyName());
+            }
+            }
+
+        /*
+        Other useful services to monitor include PersonService (create new persons (patients), OrderService (lab/drug orders),
+        VisitService
+        Also, check usage statistics module for other logging information
+        
+        App to use for creating charts: http://dvillela.servehttp.com:4000/apostilas/jfreechart_tutorial.pdf
+        */
+        }
+
+    }
