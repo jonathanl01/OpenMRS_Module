@@ -8,6 +8,7 @@ import org.openmrs.api.context.Context;
 import org.openmrs.Patient;
 import org.openmrs.Encounter;
 import org.openmrs.Person;
+import org.openmrs.Order;
 import org.springframework.aop.AfterReturningAdvice;
 
 
@@ -37,13 +38,20 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
                 Patient p = enc.getPatient();
                 System.out.println(" Patient: " + p.getFamilyName());
             }
-            if (method.getName().equals("createPerson")) {
+            /*if (method.getName().equals("createPerson")) {
                 Person p = (Person)returnValue;
                 System.out.println(" Person: " + p.getFamilyName() + " created");
-            }
+            }*/
             if (method.getName().equals("savePerson")) {
                 Person p = (Person)returnValue;
                 System.out.println(" Person: " + p.getFamilyName() + " saved");
+            }
+            if (method.getName().equals("saveOrder")) {
+                Order o = (Order)returnValue;
+                System.out.println(" Order: " + o.getOrderType() + " saved for patient: "+ o.getPatient() );
+            }
+            if (method.getName().equals("saveVisit")) {
+                System.out.println(" Visit saved" );
             }
             }
 

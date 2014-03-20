@@ -25,6 +25,7 @@
 			<groupId>org.openmrs.api</groupId>
 			<artifactId>openmrs-api</artifactId>
 			<type>jar</type>
+		 <version>1.9.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openmrs.api</groupId>

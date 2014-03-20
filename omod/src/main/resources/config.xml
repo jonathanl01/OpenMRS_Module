@@ -36,7 +36,7 @@
         <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
     </advice>
     
-       <advice>
+    <advice>
         <point>org.openmrs.api.EncounterService</point>
         <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
     </advice>
@@ -48,6 +48,11 @@
     
    <advice>
         <point>org.openmrs.api.OrderService</point>
+        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
+    </advice>    
+    
+   <advice>
+        <point>org.openmrs.api.VisitService</point>
         <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
     </advice>    
     
