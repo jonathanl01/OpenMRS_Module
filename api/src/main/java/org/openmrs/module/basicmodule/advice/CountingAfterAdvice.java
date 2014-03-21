@@ -46,6 +46,10 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
                 Person p = (Person)returnValue;
                 System.out.println(" Person: " + p.getFamilyName() + " saved");
             }
+            if (method.getName().equals("savePatient")) {
+                Person p = (Person)returnValue;
+                System.out.println(" Patient: " + p.getFamilyName() + " saved");
+            }
             if (method.getName().equals("saveOrder")) {
                 Order o = (Order)returnValue;
                 System.out.println(" Order: " + o.getOrderType() + " saved for patient: "+ o.getPatient() );
