@@ -13,7 +13,7 @@
         for a list of supported elements and attributes
     -->
  
- 	<!-- Uncomment this and edit the values below to use this file
+ 	<!-- Uncomment this and edit the values below to use this file -->
  	
 	<changeSet id="mymoduleid-2010-05-25-15:50" author="bwolfe">
 		<preConditions onFail="MARK_RAN">
@@ -22,7 +22,7 @@
 		<comment>
 			Creating the mymoduleid_myobject table
 		</comment>
-		<createTable tableName="mymoduleid_myobject">
+		<createTable tableName="access_patient">
 			<column name="mymoduleid_myobject_id" type="int">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
@@ -35,6 +35,6 @@
 		</createTable>
     </changeSet>
     
-    -->
+    <!-- -->
  
 </databaseChangeLog>
