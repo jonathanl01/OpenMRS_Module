@@ -13,6 +13,7 @@ import java.sql.Date;
  */
 public class AccessOrder {
 
+   protected Integer id;
    protected Date date;
    protected Integer order_id;
    protected char view_edited;
@@ -29,6 +30,9 @@ public class AccessOrder {
       this.patient_id = patient_id;
       this.location_id = location_id;
    }
+   
+   public Integer getId(){return this.id;}
+   public void setId(Integer id){ this.id = id; }
    
    public Date getDatetime() { return this.date; }
    public void setDatetime( Date datetime) { this.date = datetime; }
