@@ -31,6 +31,9 @@ public class AccessOrder {
       this.location_id = location_id;
    }
    
+   public Integer getId(){return this.id;}
+   public void setId(Integer id){ this.id = id; }
+   
    public Date getDatetime() { return this.date; }
    public void setDatetime( Date datetime) { this.date = datetime; }
    
