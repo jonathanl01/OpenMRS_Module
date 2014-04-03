@@ -26,9 +26,6 @@ misha680
 
 5bac5841-c719-aa4e-b3fe-cce5062f897a
 
-impl
-dir
-
 BasicModuleActivator.java
 file
 
@@ -62,9 +59,6 @@ misha680
 
 
 1232
-
-db
-dir
 
 Note.java
 file
@@ -115,6 +109,12 @@ http://svn.openmrs.org/openmrs-modules/devexamples/patientnotes/src/org/openmrs/
 advice
 dir
 
+db
+dir
+
 extension
+dir
+
+impl
 dir
 
