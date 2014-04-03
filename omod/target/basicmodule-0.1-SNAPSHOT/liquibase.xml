@@ -15,23 +15,43 @@
  
  	<!-- Uncomment this and edit the values below to use this file -->
  	
-	<changeSet id="mymoduleid-2010-05-25-15:50" author="bwolfe">
+	<changeSet id="patient" author="ycheng">
 		<preConditions onFail="MARK_RAN">
-			<not><tableExists tableName="mymoduleid_myobject"/></not>
+			<not><tableExists tableName="access_patient"/></not>
 		</preConditions>
 		<comment>
-			Creating the mymoduleid_myobject table
+			Creating the access_patient table
 		</comment>
 		<createTable tableName="access_patient">
-			<column name="mymoduleid_myobject_id" type="int">
+			<column name="access_id" type="int">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
-			<column name="firstname" type="varchar(255)"/>
-			<column name="lastname" type="varchar(255)"/>
-			<column name="username" type="varchar(255)">
-				<constraints unique="true" nullable="false"/>
+			<column name="date" type="varchar(255)"/>
+			<column name="time" type="varchar(255)"/>
+			<column name="action" type="varchar(255)" />
+                        <column name="user_id" type="int"/>
+                        <column name="patient_id" type="int"/>
+                        <column name="location_id" type="int"/>
+		</createTable>
+    </changeSet>
+    	<changeSet id="order" author="ycheng">
+		<preConditions onFail="MARK_RAN">
+			<not><tableExists tableName="access_order"/></not>
+		</preConditions>
+		<comment>
+			Creating the access_order table
+		</comment>
+		<createTable tableName="access_order">
+			<column name="access_id" type="int">
+				<constraints primaryKey="true" nullable="false"/>
 			</column>
-			<column name="testid" type="int" />
+			<column name="date" type="varchar(255)"/>
+			<column name="time" type="varchar(255)"/>
+			<column name="order_id" type="int"/>
+			<column name="action" type="varchar(255)" />
+                        <column name="user_id" type="int"/>
+                        <column name="patient_id" type="int"/>
+                        <column name="location_id" type="int"/>
 		</createTable>
     </changeSet>
     
