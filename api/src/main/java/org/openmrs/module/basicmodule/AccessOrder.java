@@ -13,6 +13,7 @@ import java.sql.Date;
  */
 public class AccessOrder {
 
+   protected Integer id;
    protected Date date;
    protected Integer order_id;
    protected char view_edited;
