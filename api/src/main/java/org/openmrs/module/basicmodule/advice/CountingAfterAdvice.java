@@ -1,6 +1,7 @@
 package org.openmrs.module.basicmodule.advice;
 
 import java.lang.reflect.Method;
+import java.sql.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -9,6 +10,8 @@ import org.openmrs.Patient;
 import org.openmrs.Encounter;
 import org.openmrs.Person;
 import org.openmrs.Order;
+import org.openmrs.module.basicmodule.AccessOrder;
+import org.openmrs.module.basicmodule.AccessOrderService;
 import org.springframework.aop.AfterReturningAdvice;
 
 
@@ -25,6 +28,15 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
         log.debug("Method: " + method.getName() + ". After advice called " + (++count) + " time(s) now.");
         String userName = Context.getUserContext().getAuthenticatedUser().getFamilyName();
         System.out.println("AOP - by: " + userName + "  Method: " + method.getName() + ". After advice called " + (++count) + " time(s) now.");
+        
+        //testing database access
+        System.out.println("---------------->attempting to access database...");
+        AccessOrderService svc = (AccessOrderService)Context.getService(AccessOrderService.class);
+        AccessOrder ao = new AccessOrder(new Date(0,0,0), 1, 'v', 1, 1, 1);
+        svc.saveAccessOrder(ao);
+        System.out.println("*****************access_order table has been updated!");
+        //end test
+        
         if (returnValue != null) {
             if (returnValue.getClass() == Patient.class) {
                 Patient p = (Patient) returnValue;

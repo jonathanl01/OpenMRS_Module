@@ -6,21 +6,15 @@
 
 package org.openmrs.module.basicmodule.db.hibernate;
 
-import java.util.List;
-import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
-import org.openmrs.Patient;
 import org.openmrs.module.basicmodule.AccessOrder;
-import org.openmrs.module.basicmodule.Note;
 import org.openmrs.module.basicmodule.db.AccessOrderDAO;
-import org.openmrs.module.basicmodule.db.NoteDAO;
 
 /**
  *
  * @author anthony
  */
-public class HIbernateAccessOrderDAO implements AccessOrderDAO {
+public class HibernateAccessOrderDAO implements AccessOrderDAO {
    private SessionFactory sessionFactory;
 
 	/**

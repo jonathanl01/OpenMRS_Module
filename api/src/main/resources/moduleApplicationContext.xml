@@ -23,4 +23,43 @@
   		    http://www.springframework.org/schema/util
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
+   <!-- ***************  services **********************-->
+<!--
+   <bean parent="serviceContext">
+		<property name="moduleService">
+			<list>
+				<value>org.openmrs.module.basicmodule.AccessOrderService</value>
+				<bean
+					class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+					<property name="transactionManager">
+						<ref bean="transactionManager" />
+					</property> --><!-- more req stuff --><!--
+					<property name="target">
+						<bean class="org.openmrs.module.basicmodule.impl.AccessOrderServiceImpl">
+							<property name="AccessOrderDAO">
+								<bean class="org.openmrs.module.basicmodule.db.hibernate.HibernateAccessOrderDAO">
+									<property name="sessionFactory">
+										<ref bean="sessionFactory" />
+									</property>
+								</bean>
+							</property>
+						</bean>
+					</property>
+					<property name="preInterceptors">
+						<list>
+							<ref bean="authorizationInterceptor" />
+						</list>
+					</property>
+					<property name="transactionAttributeSource">
+						<bean
+							class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+-->
+
 </beans>
+	
+

@@ -7,7 +7,7 @@
    <!-- This entry is run at module startup.  If the global property called "patientnotes.database_version" in the database
    doesn't exist or is less than 0.1, then this "diff" is run.  If the value of that GP is greater than or equal to 0.1, 
    then this won't be run.  Immediately after running this diff, openmrs sets the patientnotes.database_version GP to 0.1  -->
-        <!-- -->
+   <!-- -->
    <diff>
       <version>0.6</version>
       <author>anthony</author>
@@ -18,37 +18,37 @@
       <sql>
          <!--DROP TABLE IF EXISTS `access_order`;-->
          CREATE TABLE access_order [IF NOT EXISTS](
-         id int(10) NOT NULL,
-         date datetime NOT NULL,
-         order_id int(20) NOT NULL,
-         viewed_edited char NOT NULL,
-         user_id int(20) NOT NULL,
-         patient_id int(20) NOT NULL,
-         location_id int(20) NOT NULL,
+            id int(10) NOT NULL,
+            date datetime NOT NULL,
+            order_id int(20) NOT NULL,
+            viewed_edited char NOT NULL,
+            user_id int(20) NOT NULL,
+            patient_id int(20) NOT NULL,
+            location_id int(20) NOT NULL,
+            PRIMARY KEY(id)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+          
+         CREATE TABLE access_visit[IF NOT EXISTS] (
+            id int(10) NOT NULL,
+            date datetime NOT NULL,
+            viewed_edited char NOT NULL,
+            visit_id int(20) NOT NULL,
+            user_id int(20) NOT NULL,
+            patient_id int(20) NOT NULL,
+            location_id int(20) NOT NULL,
          PRIMARY KEY(id)
-	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+         );
           
-          CREATE TABLE access_visit[IF NOT EXISTS] (
-          id int(10) NOT NULL,
-          date datetime NOT NULL,
-          viewed_edited char NOT NULL,
-          visit_id int(20) NOT NULL,
-          user_id int(20) NOT NULL,
-          patient_id int(20) NOT NULL,
-          location_id int(20) NOT NULL,
-          PRIMARY KEY(id)
-          );
-          
-          CREATE TABLE access_patient[IF NOT EXISTS] (
-          id int(10) NOT NULL,
-          date datetime NOT NULL,
-          viewed_edited char NOT NULL,
-          user_id int(20) NOT NULL,
-          encounter_id int(20) NOT NULL,
-          patient_id int(20) NOT NULL,
-          location_id int(20) NOT NULL,
-          PRIMARY KEY(id)
-          );
+         CREATE TABLE access_patient[IF NOT EXISTS] (
+            id int(10) NOT NULL,
+            date datetime NOT NULL,
+            viewed_edited char NOT NULL,
+            user_id int(20) NOT NULL,
+            encounter_id int(20) NOT NULL,
+            patient_id int(20) NOT NULL,
+            location_id int(20) NOT NULL,
+         PRIMARY KEY(id)
+         );
       </sql>
           
    </diff>
