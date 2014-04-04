@@ -16,8 +16,8 @@
          Create the order_usage table
       </description>
       <sql>
-         DROP TABLE IF EXISTS `access_order`;
-         CREATE TABLE access_order (
+         <!--DROP TABLE IF EXISTS `access_order`;-->
+         CREATE TABLE access_order [IF NOT EXISTS](
          id int(10) NOT NULL,
          date datetime NOT NULL,
          order_id int(20) NOT NULL,
@@ -28,7 +28,7 @@
          PRIMARY KEY(id)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
           
-          CREATE TABLE access_visit (
+          CREATE TABLE access_visit[IF NOT EXISTS] (
           id int(10) NOT NULL,
           date datetime NOT NULL,
           viewed_edited char NOT NULL,
@@ -39,7 +39,7 @@
           PRIMARY KEY(id)
           );
           
-          CREATE TABLE access_patient (
+          CREATE TABLE access_patient[IF NOT EXISTS] (
           id int(10) NOT NULL,
           date datetime NOT NULL,
           viewed_edited char NOT NULL,
