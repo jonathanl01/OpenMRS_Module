@@ -16,6 +16,7 @@
          Create the order_usage table
       </description>
       <sql>
+         <!--DROP TABLE IF EXISTS `access_order`;-->
          CREATE TABLE access_order (
          id int(10) NOT NULL,
          date datetime NOT NULL,
@@ -36,7 +37,7 @@
           patient_id int(20) NOT NULL,
           location_id int(20) NOT NULL,
           PRIMARY KEY(id)
-          )
+          );
           
           CREATE TABLE access_patient (
           id int(10) NOT NULL,
@@ -47,7 +48,7 @@
           patient_id int(20) NOT NULL,
           location_id int(20) NOT NULL,
           PRIMARY KEY(id)
-          )
+          );
       </sql>
           
    </diff>

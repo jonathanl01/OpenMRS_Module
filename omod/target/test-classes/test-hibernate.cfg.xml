@@ -5,6 +5,7 @@
 
 <hibernate-configuration>
 	<session-factory>
-		
+		<mapping resource="AccessOrder.hbm.xml" />
+
 	</session-factory>
 </hibernate-configuration>
