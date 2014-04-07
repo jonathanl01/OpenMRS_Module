@@ -7,6 +7,7 @@
 package org.openmrs.module.basicmodule;
 
 import java.util.Date;
+import org.openmrs.User;
 
 /**
  *

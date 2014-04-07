@@ -16,7 +16,7 @@
          Create the order_usage table
       </description>
       <sql>
-         <!--DROP TABLE IF EXISTS `access_order`;-->
+         
          CREATE TABLE IF NOT EXISTS access_order (
             id int(10) NOT NULL auto_increment,
             date datetime NOT NULL,
