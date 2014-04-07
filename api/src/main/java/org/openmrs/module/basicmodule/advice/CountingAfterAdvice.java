@@ -1,7 +1,7 @@
 package org.openmrs.module.basicmodule.advice;
 
 import java.lang.reflect.Method;
-import java.sql.Date;
+import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -30,12 +30,12 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
         System.out.println("AOP - by: " + userName + "  Method: " + method.getName() + ". After advice called " + (++count) + " time(s) now.");
         
         //testing database access
-        System.out.println("---------------->attempting to access database...");
+        /*System.out.println("---------------->attempting to access database...");
         AccessOrderService svc = (AccessOrderService)Context.getService(AccessOrderService.class);
-        AccessOrder ao = new AccessOrder(new Date(0,0,0), 1, 'v', 1, 1, 1);
+        AccessOrder ao = new AccessOrder();
         svc.saveAccessOrder(ao);
         System.out.println("*****************access_order table has been updated!");
-        //end test
+        //end test*/
         
         if (returnValue != null) {
             if (returnValue.getClass() == Patient.class) {
@@ -64,7 +64,7 @@ public class CountingAfterAdvice implements AfterReturningAdvice {
             }
             if (method.getName().equals("saveOrder")) {
                 Order o = (Order)returnValue;
-                System.out.println(" Order: " + o.getOrderType() + " saved for patient: "+ o.getPatient() );
+                System.out.println(" Order: "  + " saved for patient: "+ o.getPatient() );
             }
             if (method.getName().equals("saveVisit")) {
                 System.out.println(" Visit saved" );

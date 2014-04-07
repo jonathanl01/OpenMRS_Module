@@ -60,29 +60,6 @@ raff
 
 2800
 
-moduleApplicationContext.xml
-file
-
-
-
-add
-
-ed0b504314080cbeb6f3c692f3989117
-
-
-
-
-
-
-
-
-
-
-
-copied
-http://svn.openmrs.org/openmrs-modules/devexamples/patientnotes/metadata/moduleApplicationContext.xml
-26779
-
 sqldiff.xml
 file
 

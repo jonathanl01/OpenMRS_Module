@@ -22,14 +22,6 @@ public class AccessOrder {
    protected Integer location_id;
 
    public AccessOrder() {}
-   public AccessOrder(Date datetime, Integer order_id, char view_edited,
-           Integer user_id, Integer patient_id, Integer location_id) {
-      this.date = datetime;
-      this.order_id = order_id;
-      this.user_id = user_id;
-      this.patient_id = patient_id;
-      this.location_id = location_id;
-   }
    
    public Integer getId(){return this.id;}
    public void setId(Integer id){ this.id = id; }
@@ -48,5 +40,8 @@ public class AccessOrder {
    
    public Integer getLocation_id() { return this.location_id; }
    public void setLocation_iud(Integer location_id) { this.location_id = location_id; }
+   
+   public char getView_edited(){ return view_edited;}
+   public void setView_edited(char view_edited){this.view_edited = view_edited;}
 }
  

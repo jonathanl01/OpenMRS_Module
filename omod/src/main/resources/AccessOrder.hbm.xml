@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 
-<hibernate-mapping package="@MODULE_PACKAGE@">
+<hibernate-mapping package="org.openmrs.module.basicmodule">
 	
 	<class name="AccessOrder" table="access_order">
 
@@ -15,7 +15,7 @@
 		
 		<property name="order_id" not-null="true" type="int" column="order_id" />
 		
-		<property name="view_edited" not-null="true" type="char" column="view_edited" />
+		<property name="view_edited" not-null="true" type="char" column="viewed_edited" />
 		
 		<property name="user_id" not-null="true" type="int" column="user_id" />
 		
@@ -24,4 +24,5 @@
 		<property name="location_id" type="int" column="location_id" />
 	</class>
 </hibernate-mapping>
+
 

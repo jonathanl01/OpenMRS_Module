@@ -8,6 +8,7 @@ package org.openmrs.module.basicmodule.db;
 
 import java.util.List;
 import org.openmrs.Patient;
+import org.openmrs.api.db.DAOException;
 import org.openmrs.module.basicmodule.AccessOrder;
 import org.openmrs.module.basicmodule.AccessPatient;
 
@@ -21,9 +22,9 @@ import org.openmrs.module.basicmodule.AccessPatient;
  */
 public interface AccessPatientDAO {
 
-   AccessPatient getAccessPatient(Integer id);
+   public AccessPatient getAccessPatient(Integer id);
    
-   AccessPatient saveAccessPatient(AccessPatient accessPatient);
+   public void saveAccessPatient(AccessPatient accessPatient)throws DAOException;
 
 
 }

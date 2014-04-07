@@ -17,8 +17,8 @@
       </description>
       <sql>
          <!--DROP TABLE IF EXISTS `access_order`;-->
-         CREATE TABLE access_order [IF NOT EXISTS](
-            id int(10) NOT NULL,
+         CREATE TABLE IF NOT EXISTS access_order (
+            id int(10) NOT NULL auto_increment,
             date datetime NOT NULL,
             order_id int(20) NOT NULL,
             viewed_edited char NOT NULL,
@@ -28,8 +28,8 @@
             PRIMARY KEY(id)
          ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
           
-         CREATE TABLE access_visit[IF NOT EXISTS] (
-            id int(10) NOT NULL,
+         CREATE TABLE IF NOT EXISTS access_visit (
+            id int(10) NOT NULL auto_increment,
             date datetime NOT NULL,
             viewed_edited char NOT NULL,
             visit_id int(20) NOT NULL,
@@ -37,10 +37,10 @@
             patient_id int(20) NOT NULL,
             location_id int(20) NOT NULL,
          PRIMARY KEY(id)
-         );
-          
-         CREATE TABLE access_patient[IF NOT EXISTS] (
-            id int(10) NOT NULL,
+         )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+         
+          CREATE TABLE IF NOT EXISTS access_patient (
+            id int(10) NOT NULL auto_increment,
             date datetime NOT NULL,
             viewed_edited char NOT NULL,
             user_id int(20) NOT NULL,
@@ -48,7 +48,7 @@
             patient_id int(20) NOT NULL,
             location_id int(20) NOT NULL,
          PRIMARY KEY(id)
-         );
+         )ENGINE=InnoDB DEFAULT CHARSET=utf8;
       </sql>
           
    </diff>

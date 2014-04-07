@@ -31,30 +31,7 @@
     </extension>
         
         
-    <advice>
-        <point>org.openmrs.api.PatientService</point>
-        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>
     
-    <advice>
-        <point>org.openmrs.api.EncounterService</point>
-        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>
-    
-    <advice>
-        <point>org.openmrs.api.PersonService</point>
-        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>    
-    
-   <advice>
-        <point>org.openmrs.api.OrderService</point>
-        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>    
-    
-   <advice>
-        <point>org.openmrs.api.VisitService</point>
-        <class>org.openmrs.module.basicmodule.advice.CountingAfterAdvice</class>
-    </advice>    
     
     <globalProperty>
         <property>basicmodule.testproperty</property>
@@ -66,12 +43,12 @@
     </globalProperty>
         
 
-    <!-- AOP
+    <!-- AOP-->
    <advice>
-           <point>org.openmrs.api.FormService</point>
-           <class>@MODULE_PACKAGE@.advice.DuplicateFormAdvisor</class>
-   </advice>
-    /AOP -->
+        <point>org.openmrs.api.PatientService</point>
+        <class>org.openmrs.module.basicmodule.advice.PatientServiceAdvice</class>
+    </advice>   
+   
 	
         
     <privilege>
@@ -95,7 +72,10 @@
         <lang>es</lang>
         <file>messages_es.properties</file>
     </messages>
+	<mappingFiles>
+		AccessPatient.hbm.xml
+	</mappingFiles>
     <!-- /Internationalization -->
-	
+
 </module>
 

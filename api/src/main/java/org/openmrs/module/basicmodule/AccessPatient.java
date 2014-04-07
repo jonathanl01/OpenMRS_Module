@@ -6,7 +6,7 @@
 
 package org.openmrs.module.basicmodule;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -26,23 +26,13 @@ public class AccessPatient{
     public AccessPatient(){
         
     }
-    
-    public AccessPatient(Integer id, Date date, char viewed_edited,
-            Integer user_id, Integer patient_id, Integer encounter_id,Integer location_id){
-        this.id = id;
-        this.date = date;
-        this.viewed_edited = viewed_edited;
-        this.encounter_id = encounter_id;
-        this.user_id = user_id;
-        this.patient_id = patient_id;
-        this.location_id = location_id;
-    }
+   
     
     public Integer getId(){
         return id;
     }
     
-    public void setId(Integer id){
+    public void setId(int id){
         this.id = id;
     }
     
@@ -88,6 +78,10 @@ public class AccessPatient{
     
     public Integer getLocation_id(){
         return location_id;
+    }
+    
+    public void setLocation_id(Integer location_id){
+        this.location_id = location_id;
     }
 }
 

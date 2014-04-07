@@ -16,7 +16,7 @@ public class AccessVisit {
     
     protected Integer id;
     protected Date date;
-    protected char viewed_edited;
+    protected char view_edited;
     protected Integer visit_id;
     protected Integer user_id;
     protected Integer patient_id;
@@ -26,18 +26,7 @@ public class AccessVisit {
     public AccessVisit(){
         
     }
-    
-    public AccessVisit(Integer id, Date date, char viewed_edited, Integer visit_id,
-            Integer user_id, Integer patient_id, Integer location_id){
-        this.id = id;
-        this.date = date;
-        this.viewed_edited = viewed_edited;
-        this.visit_id = visit_id;
-        this.user_id = user_id;
-        this.patient_id = patient_id;
-        this.location_id = location_id;
-    }
-    
+
     public Integer getId(){
         return id;
     }
@@ -54,12 +43,12 @@ public class AccessVisit {
         this.date = date;
     }
     
-    public char getViewed_edited(){
-        return viewed_edited;
+    public char getView_edited(){
+        return view_edited;
     }
     
-    public void setViewed_edited(char viewed_edited){
-        this.viewed_edited = viewed_edited;
+    public void setViewed_edited(char view_edited){
+        this.view_edited = view_edited;
     }
     
     public Integer getVisit_id(){
@@ -88,5 +77,8 @@ public class AccessVisit {
     
     public Integer getLocation_id(){
         return location_id;
+    }
+    public void setLocation_id(Integer location_id){
+        this.location_id = location_id;
     }
 }
