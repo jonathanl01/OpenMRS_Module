@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.328" errors="0" skipped="0" tests="2" name="org.openmrs.module.basicmodule.AdminListExtensionTest">
+<testsuite failures="0" time="2.875" errors="0" skipped="0" tests="2" name="org.openmrs.module.basicmodule.AdminListExtensionTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\bin"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="D:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="D:\Program Files\NetBeans 7.4\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_45\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;d:\Program Files\Git\git-cheetah\..\bin;d:\Program Files\Git\git-cheetah\..\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;d:\Program Files\UltraEdit;D:\Program Files\MATLAB\R2009a\bin;D:\Program Files\MATLAB\R2009a\bin\win32;C:\Program Files\Common Files\Thunder Network\KanKan\Codecs;D:\strawberry\c\bin;D:\strawberry\perl\site\bin;D:\strawberry\perl\bin;D:\Program Files\Java\jdk1.7.0_21\bin;D:\Program Files\Java\jdk1.7.0_21\jre\bin;D:\Program Files\TortoiseSVN\bin;D:\Program Files\MySQL\MySQL Enterprise Backup 3.9.0\;D:\Program Files\MySQL\MySQL Utilities 1.3.6\;C:\Program Files\StormII\Codec;C:\Program Files\StormII;D:\Program Files\ssh;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_45\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;d:\Program Files\UltraEdit;D:\Program Files\MATLAB\R2009a\bin;D:\Program Files\MATLAB\R2009a\bin\win32;C:\Program Files\Common Files\Thunder Network\KanKan\Codecs;D:\strawberry\c\bin;D:\strawberry\perl\site\bin;D:\strawberry\perl\bin;D:\Program Files\Java\jdk1.7.0_21\bin;D:\Program Files\Java\jdk1.7.0_21\jre\bin;D:\Program Files\TortoiseSVN\bin;D:\Program Files\MySQL\MySQL Enterprise Backup 3.9.0\;D:\Program Files\MySQL\MySQL Utilities 1.3.6\;C:\Program Files\StormII\Codec;C:\Program Files\StormII;D:\Program Files\ssh;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -63,6 +63,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="1.172" classname="org.openmrs.module.basicmodule.AdminListExtensionTest" name="testValidatesLinks"/>
+  <testcase time="2.5" classname="org.openmrs.module.basicmodule.AdminListExtensionTest" name="testValidatesLinks"/>
   <testcase time="0" classname="org.openmrs.module.basicmodule.AdminListExtensionTest" name="testMediaTypeIsHtml"/>
 </testsuite>

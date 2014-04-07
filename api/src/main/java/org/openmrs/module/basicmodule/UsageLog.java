@@ -13,6 +13,9 @@
  */
 package org.openmrs.module.basicmodule;
 
+/**
+ * author: Ye
+ */
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
@@ -29,8 +32,6 @@ import org.openmrs.util.OpenmrsConstants;
 public class UsageLog {
 	
 	protected static final Log log = LogFactory.getLog(UsageLog.class);
-	
-	protected static int onlineUserCount = 0;
 
 	/**
 	 * The type of a usage event
@@ -58,28 +59,12 @@ public class UsageLog {
 	 * Logs a usage event
 	 * @param encounter the encounter
 	 */
-	public static void logEvent(Encounter encounter) {
+	public static void logEvent(Encounter encounter, Type type) {
 		// Use encounter creator as infopath forms are submitted by super user
 		User user = encounter.getCreator();
 		Patient patient = encounter.getPatient();
 		
-		logEvent(user, patient, encounter, null, null);
-	}
-	
-	/**
-	 * Gets the online user count
-	 * @return the number of users
-	 */
-	public static int getOnlineUserCount() {
-		return onlineUserCount;
-	}
-	
-	/**
-	 * Sets the online user count
-	 * @param count the number of users
-	 */
-	public static void setOnlineUserCount(int count) {
-		onlineUserCount = count;
+		logEvent(user, patient, encounter, type, null);
 	}
 	
 	/**
@@ -108,9 +93,14 @@ public class UsageLog {
 		// Update the time of the recent event
 		ap.setDate(new Date());
 
-		/*if (encounter != null) {
-			ap.addEncounter(encounter);
-		}*/
+		if (encounter != null) {
+			ap.setEncounter_id(encounter.getEncounterId());
+                        ap.setLocation_id(encounter.getLocation().getLocationId());
+		}
+                else {
+                    ap.setEncounter_id(-999);
+                    ap.setLocation_id(-999);
+                }
 		
 		// Set created / updated / voided flags
 		if (type == Type.CREATED){
@@ -124,10 +114,10 @@ public class UsageLog {
                 }
 		
                
-              ap.setEncounter_id(0);
-              ap.setLocation_id(0);
+              //ap.setEncounter_id(0);
+              //ap.setLocation_id(0);
               ap.setUser_id(user.getUserId());
               ap.setPatient_id(patient.getPersonId());
-		svc.saveAccessPatient(ap);
+	      svc.saveAccessPatient(ap);
 	}
 }

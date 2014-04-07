@@ -39,7 +39,7 @@ public class PatientServiceAdvice implements MethodBeforeAdvice, AfterReturningA
 					//usageType = UsageLog.Type.VOIDED;
 			}			
 		}
-		else if (method.getName().equals("createPatient"))
+		else if (method.getName().equals("createPatient")||method.getName().equals("unvoidPatient"))
 			usageType = UsageLog.Type.CREATED;
 		else if (method.getName().equals("voidPatient"))
 			usageType = UsageLog.Type.VOIDED;
@@ -50,7 +50,8 @@ public class PatientServiceAdvice implements MethodBeforeAdvice, AfterReturningA
 		if (method.getName().equals("savePatient")
 				|| method.getName().equals("updatePatient")
 				|| method.getName().equals("createPatient")
-				|| method.getName().equals("voidPatient")) {
+				|| method.getName().equals("voidPatient")
+                                || method.getName().equals("unvoidPatient")) {
 			Patient patient = (Patient)args[0];
 
 			UsageLog.logEvent(patient, usageType, null);
