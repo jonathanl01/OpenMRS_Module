@@ -4,8 +4,8 @@
 	<li class="first<c:if test='<%= request.getRequestURI().contains("patientAccess") %>'> active</c:if>">
 		<a href="patientAccess.htm"><spring:message code="basicmodule.menu.patient"/></a>
 	</li>
-	<li class="test<c:if test='<%= request.getRequestURI().contains("user") %>'> active</c:if>">
-		<a href="user.htm"><spring:message code="basicmodule.menu.user"/></a>
+	<li class="test<c:if test='<%= request.getRequestURI().contains("userAccess") %>'> active</c:if>">
+		<a href="userAccess.htm"><spring:message code="basicmodule.menu.user"/></a>
 	</li>
 	<li class="test<c:if test='<%= request.getRequestURI().contains("order") %>'> active</c:if>">
 		<a href="order.htm"><spring:message code="basicmodule.menu.order"/></a>
