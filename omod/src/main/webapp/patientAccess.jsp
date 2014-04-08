@@ -20,7 +20,7 @@
 
 				<privacy_tag:dateRange fromField="from" fromValue="${from}" untilField="until" untilValue="${until}" />
 				
-				<spring:message code="basicmodule.query.byPatient"/>
+				<spring:message code="basicmodule.query.forPatient"/>
 
                                 <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
                                 <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
@@ -47,7 +47,7 @@
 		</tr>
                 <c:forEach items="${stats}" var="row" varStatus="rowStatus">
 			<tr class="<c:choose><c:when test="${rowStatus.index % 2 == 0}">evenRow</c:when><c:otherwise>oddRow</c:otherwise></c:choose>">
-				<td><a href="privacyPatient.htm?from=${privacy:formatDate(from)}&amp;until=${privacy:formatDate(until)}&amp;userId=${row[0]}">${row[1]}</a></td>
+				<td><a href="patientAccess.htm?from=${privacy:formatDate(from)}&amp;until=${privacy:formatDate(until)}&amp;userId=${row[0]}">${row[1]}</a></td>
 				<td align="center">${row[2]}</td>
 				<td align="center">${row[3]}</td>
 				<td align="center">${row[4]}</td>

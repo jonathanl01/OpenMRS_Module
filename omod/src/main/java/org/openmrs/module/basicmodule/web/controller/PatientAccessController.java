@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "module/basicmodule/privacyPatient.form")
-public class PrivacyPatientController {
+@RequestMapping(value = "module/basicmodule/patientAccess.form")
+public class PatientAccessController {
 	
 	/** Logger for this class and subclasses */
 	protected final Log log = LogFactory.getLog(getClass());
 	
 	/** Success form view name */
-	private final String SUCCESS_FORM_VIEW = "/module/basicmodule/privacyPatient";  
+	private final String SUCCESS_FORM_VIEW = "/module/basicmodule/patientAccess";  
         
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(){
-            System.out.println("PrivacyPatientController showForm method***************");
+            System.out.println("PatientAccessController showForm method***************");
 		return SUCCESS_FORM_VIEW;
 	}
 	
