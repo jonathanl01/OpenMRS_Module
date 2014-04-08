@@ -6,6 +6,7 @@
 <%@ include file="/WEB-INF/template/header.jsp"%>
 
 <%@ include file="template/localHeader.jsp" %>
+<%@ include file="template/localInclude.jsp" %>
 
 <b class="boxHeader">
 	<spring:message code="basicmodule.patient.title"/>
@@ -17,7 +18,7 @@
 			<td align="left">
 				<spring:message code="basicmodule.query.from" />
 
-				<ustats_tag:dateRange fromField="from" fromValue="${from}" untilField="until" untilValue="${until}" />
+				<privacy_tag:dateRange fromField="from" fromValue="${from}" untilField="until" untilValue="${until}" />
 				
 				<spring:message code="basicmodule.query.byPatient"/>
 
@@ -26,7 +27,7 @@
 				
                                 <spring:message code="basicmodule.query.with"/>
 				
-				<ustats_tag:usageFilter formFieldName="usageFilter" initialValue="${usageFilter}" />
+				<privacy_tag:usageFilter formFieldName="usageFilter" initialValue="${usageFilter}" />
 				
 				<spring:message code="basicmodule.query.type"/>
 			</td>
@@ -44,6 +45,7 @@
 			<th align="center"><spring:message code="basicmodule.results.patient"/></th>
 			<th align="center"><spring:message code="basicmodule.results.type"/></th>
 		</tr>
+
 		<c:if test="${empty stats}">
 			<tr>
 				<td colspan="8" style="padding: 10px; text-align: center"><spring:message code="basicmodule.noresults"/></td>
