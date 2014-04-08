@@ -5,7 +5,6 @@
 
 <%@ include file="/WEB-INF/template/header.jsp"%>
 
-<!--<%@ include file="template/localInclude.jsp" %>-->
 <%@ include file="template/localHeader.jsp" %>
 
 <b class="boxHeader">
@@ -45,18 +44,6 @@
 			<th align="center"><spring:message code="basicmodule.results.patient"/></th>
 			<th align="center"><spring:message code="basicmodule.results.type"/></th>
 		</tr>
-		<c:forEach items="${stats}" var="row" varStatus="rowStatus">
-			<tr class="<c:choose><c:when test="${rowStatus.index % 2 == 0}">evenRow</c:when><c:otherwise>oddRow</c:otherwise></c:choose>">
-				<td><a href="users.htm?from=${ustats:formatDate(from)}&amp;until=${ustats:formatDate(until)}&amp;locationId=${param.locationId}&amp;role=${fn:replace(row[0], ' ', '%20')}">${row[0]}</a></td>
-				<td align="center">${row[1]}</td>
-				<td align="center">${row[2]}</td>
-				<td align="center">${row[3]}</td>
-				<td align="center">${row[4]}</td>
-				<td align="center">${row[5]}</td>
-				<td align="center">${row[6]}</td>
-				<td align="center">${ustats:formatDate(row[7])}</td>
-			</tr>	
-		</c:forEach>
 		<c:if test="${empty stats}">
 			<tr>
 				<td colspan="8" style="padding: 10px; text-align: center"><spring:message code="basicmodule.noresults"/></td>
