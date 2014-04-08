@@ -5,7 +5,7 @@
 
 <%@ include file="/WEB-INF/template/header.jsp"%>
 
-<%@ include file="template/localInclude.jsp" %>
+<!--<%@ include file="template/localInclude.jsp" %>-->
 <%@ include file="template/localHeader.jsp" %>
 
 <b class="boxHeader">
