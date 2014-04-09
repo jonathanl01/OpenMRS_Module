@@ -22,9 +22,9 @@
 				
 				<spring:message code="basicmodule.query.forUser"/>
 
-                                <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
-                                <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
-				
+                                <openmrs_tag:userField formFieldName="userId" searchLabelCode="Encounter.provider.find" initialValue="${model.user.userId}" linkUrl="${pageContext.request.contextPath}/admin/users/user.form" />
+				<input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.userId.value='';document.usagesForm.submit();" value="X" />
+							
                                 <spring:message code="basicmodule.query.with"/>
 				
 				<privacy_tag:usageFilter formFieldName="usageFilter" initialValue="${usageFilter}" />
