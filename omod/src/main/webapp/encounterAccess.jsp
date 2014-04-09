@@ -21,8 +21,7 @@
 				<privacy_tag:dateRange fromField="from" fromValue="${from}" untilField="until" untilValue="${until}" />
 				
 				<spring:message code="basicmodule.query.forEncounter"/>
-
-                                <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
+                                <openmrs_tag:encounterField formFieldName="encounterId" searchLabelCode="Patient.find" initialValue="${model.obj.encounterId}" linkUrl="${pageContext.request.contextPath}/admin/encounters/encounter.form" />
                                 <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
 				
                                 <spring:message code="basicmodule.query.with"/>

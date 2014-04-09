@@ -22,7 +22,7 @@
 				
 				<spring:message code="basicmodule.query.forOrder"/>
 
-                                <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
+                                <openmrs_tag:orderTypeField formFieldName="${model.formFieldName}" initialValue="${model.initialValue}" orderTypes="${model.orderTypes}" optionHeader="${model.optionHeader}" />                                
                                 <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
 				
                                 <spring:message code="basicmodule.query.with"/>

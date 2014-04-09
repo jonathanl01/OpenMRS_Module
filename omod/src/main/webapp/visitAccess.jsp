@@ -22,6 +22,8 @@
 				
 				<spring:message code="basicmodule.query.forVisit"/>
 
+                                <%--<openmrs_tag:visitField formVisitName="visitId" searchLabelCode="Visit.find" initialValue="${model.visit.visitId}" linkUrl="${pageContext.request.contextPath}/admin/visits/visit.form"/>--%>
+                                
                                 <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
                                 <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
 				
