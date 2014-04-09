@@ -1,4 +1,4 @@
-<!-- Written by: Kirill -->
+<!-- Written by: Michael -->
 <%@ include file="/WEB-INF/template/include.jsp"%>
 
 <!--<openmrs:require privilege="View Patient Privacy Records" otherwise="/login.htm" redirect="/module/usagestatistics/users.htm"/>-->
@@ -43,11 +43,12 @@
 			<th><spring:message code="basicmodule.results.date"/></th>
 			<th align="center"><spring:message code="basicmodule.results.user"/></th>
 			<th align="center"><spring:message code="basicmodule.results.patient"/></th>
+			<th align="center"><spring:message code="basicmodule.results.order"/></th>
 			<th align="center"><spring:message code="basicmodule.results.type"/></th>
 		</tr>
                 <c:forEach items="${stats}" var="row" varStatus="rowStatus">
 			<tr class="<c:choose><c:when test="${rowStatus.index % 2 == 0}">evenRow</c:when><c:otherwise>oddRow</c:otherwise></c:choose>">
-				<td><a href="userAccess.htm?from=${privacy:formatDate(from)}&amp;until=${privacy:formatDate(until)}&amp;userId=${row[0]}">${row[1]}</a></td>
+				<td><a href="patientAccess.htm?from=${privacy:formatDate(from)}&amp;until=${privacy:formatDate(until)}&amp;userId=${row[0]}">${row[1]}</a></td>
 				<td align="center">${row[2]}</td>
 				<td align="center">${row[3]}</td>
 				<td align="center">${row[4]}</td>
