@@ -9,7 +9,7 @@
 <%@ include file="template/localInclude.jsp" %>
 
 <b class="boxHeader">
-	<spring:message code="basicmodule.patient.title"/>
+	<spring:message code="basicmodule.visit.title"/>
 </b>
 <form method="get" class="box">
 
@@ -20,7 +20,7 @@
 
 				<privacy_tag:dateRange fromField="from" fromValue="${from}" untilField="until" untilValue="${until}" />
 				
-				<spring:message code="basicmodule.query.forPatient"/>
+				<spring:message code="basicmodule.query.forVisit"/>
 
                                 <openmrs_tag:patientField formFieldName="patientId" searchLabelCode="Patient.find" initialValue="${model.patient.patientId}" linkUrl="${pageContext.request.contextPath}/admin/patients/patient.form"/>	
                                 <input style="width: 16px" type="button" class="smallButton" id="clearUserBtn" onclick="document.usagesForm.patientId.value='';document.usagesForm.submit();" value="X" />
@@ -40,11 +40,11 @@
 		
 	<table cellpadding="2" cellspacing="0" width="100%">
 		<tr>
+			<th align="center"><spring:message code="basicmodule.results.type"/></th>
 			<th><spring:message code="basicmodule.results.date"/></th>
 			<th align="center"><spring:message code="basicmodule.results.user"/></th>
 			<th align="center"><spring:message code="basicmodule.results.patient"/></th>
 			<th align="center"><spring:message code="basicmodule.results.visit"/></th>
-			<th align="center"><spring:message code="basicmodule.results.type"/></th>
 		</tr>
                 <c:forEach items="${stats}" var="row" varStatus="rowStatus">
 			<tr class="<c:choose><c:when test="${rowStatus.index % 2 == 0}">evenRow</c:when><c:otherwise>oddRow</c:otherwise></c:choose>">

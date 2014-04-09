@@ -37,7 +37,7 @@ public class AdminList extends AdministrationSectionExt {
 	 * @see org.openmrs.module.web.extension.AdministrationSectionExt#getTitle()
 	 */
 	public String getTitle() {
-		return "Patient Record Privacy";
+		return "Usage Statistics";
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class AdminList extends AdministrationSectionExt {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		
-		map.put("module/basicmodule/patientAccess.form", "Patient Privacy Page");
+		map.put("module/basicmodule/patientAccess.form", "Usage Statistics Page");
                 
 		return map;
 	}
