@@ -20,12 +20,8 @@ package org.openmrs.module.basicmodule;
 public enum ActionCriteria {
 	ANY_OR_NONE,
 	ANY,
-	CREATED,
-        EDITED,
-	ENCOUNTER,
-	UPDATED,
-        VIEWED,
-	VOIDED;
+	VIEWED,
+	EDITED;
 	
 	/**
 	 * Bean-property wrapper for the ordinal method so it can be used in EL
