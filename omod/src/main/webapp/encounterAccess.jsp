@@ -44,6 +44,7 @@
 			<th align="center"><spring:message code="basicmodule.results.user"/></th>
 			<th align="center"><spring:message code="basicmodule.results.patient"/></th>
 			<th align="center"><spring:message code="basicmodule.results.encounter"/></th>
+			<th align="center"><spring:message code="basicmodule.results.void"/></th>
 		</tr>
                 <c:forEach items="${stats}" var="row" varStatus="rowStatus">
 			<tr class="<c:choose><c:when test="${rowStatus.index % 2 == 0}">evenRow</c:when><c:otherwise>oddRow</c:otherwise></c:choose>">
